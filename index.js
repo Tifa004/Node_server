@@ -1,6 +1,11 @@
 const http = require("http");
 const fs = require("fs");
 
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is listening on port ${PORT}`);
+});
 const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
   let path = "./views/";
@@ -13,8 +18,8 @@ const server = http.createServer((req, res) => {
       path += "about.html";
       res.statusCode = 200;
       break;
-    case "/contact":
-      path += "contact.html";
+    case "/contact-me":
+      path += "contact-me.html";
       res.statusCode = 200;
       break;
     default:
