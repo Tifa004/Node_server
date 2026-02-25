@@ -1,11 +1,6 @@
 const http = require("http");
 const fs = require("fs");
 
-const PORT = process.env.PORT || 3000;
-
-server.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server is listening on port ${PORT}`);
-});
 const server = http.createServer((req, res) => {
   res.setHeader("Content-Type", "text/html");
   let path = "./views/";
@@ -35,4 +30,10 @@ const server = http.createServer((req, res) => {
       res.end();
     }
   });
+});
+
+const PORT = process.env.PORT || 3000;
+
+server.listen(PORT, "0.0.0.0", () => {
+  console.log(`Server is listening on port ${PORT}`);
 });
